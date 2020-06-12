@@ -34,7 +34,7 @@ def dire(dir):
 	direc=''
 	while True:
 		os.chdir('..')#Mundur
-		time.sleep(2)
+		time.sleep(1) 
 		dr=os.getcwd()
 		try:
 			if str(dr)==direc:
@@ -73,7 +73,7 @@ def ukuran_folder(directory):#UKURAN DIREKTORY
     return total
 
 #PUSH
-def push():
+def push(ee):
 	berkas=subprocess.run(['ls'],stdout=subprocess.PIPE,universal_newlines=True)
 	bks=berkas.stdout
 	bk=str(bks).replace('\n',' ').replace('\t',' ')
@@ -104,6 +104,7 @@ def push():
 			print('Make New Branch!')
 				
 		if 'commit' and 'add' in modif:
+			print('Commit ',ee)
 			subprocess.run(['git','add','.'],stdout=subprocess.PIPE,universal_newlines=True)
 			subprocess.run(['git','commit','-am',"'Termux auto'"],stdout=subprocess.PIPE,universal_newlines=True)
 			subprocess.run(['git','push'],stdout=subprocess.PIPE,universal_newlines=True)
@@ -124,10 +125,10 @@ def pindah():
 				ii=ukuran_folder(web)
 				if jm != str(oo):
 					dire(termux)
-					push()
+					push(termux)
 				if bt != str(ii):
 					dire(web)
-					push()
+					push(web) 
 			except Exception as uu:
 				print('Fail',uu)
 				break
