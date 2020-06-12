@@ -24,7 +24,6 @@ def dire(dir):
 	while True:
 		os.chdir('..')#Mundur
 		dr=os.getcwd()
-		time.sleep(1)
 		try:
 			if str(dr)==direc:
 				os.chdir(dir)
@@ -108,7 +107,6 @@ def pindah():
 	bt=''
 	try:
 		while True:
-			time.sleep(2)
 			try:
 				oo=ukuran_folder(termux)
 				ii=ukuran_folder(web)
