@@ -113,12 +113,9 @@ def pindah():
 				if jm != str(oo):
 					dire(termux)
 					push()
-					print('Termux :',oo,'bytes')
-					
 				if bt != str(ii):
 					dire(web)
 					push()
-					print('Web :',ii,'bytes')
 			except Exception as uu:
 				print('Fail',uu)
 				break
