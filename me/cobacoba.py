@@ -13,6 +13,17 @@ def waktu_sekarang():
 		waktu_sekarang()
 	return ii
 		
+def sisa_waktu(w):
+	try:
+		import sys,time
+		for e in range(w+1):
+			t = w-e
+			l = '  Second              '
+			sys.stdout.write('\rSisa Waktu : {0:0}'.format(t)+l)
+			time.sleep(0.01)
+	except Exception as ii:
+		print(ii)
+
 termux = '/data/data/com.termux/files/home/iceteaid.github.io'
 web='/storage/emulated/0/proyekbaru/program web/web'
 
@@ -121,6 +132,7 @@ def pindah():
 				break
 			jm=str(oo)
 			bt=str(ii)
+			sisa_waktu(600)
 	except Exception as iip:
 		print('Something Wrong!',iip)
 		pindah()
