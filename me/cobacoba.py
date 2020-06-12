@@ -40,7 +40,7 @@ def dire(dir):
 			if str(dr)==direc:
 				os.chdir(dir)
 				try:
-						#MASUK DIRECTORY
+						print('in :',dir)#MASUK DIRECTORY
 						qw=os.getcwd()
 						break
 				except Exception as uu:
@@ -61,9 +61,11 @@ def ukuran_folder(directory):#UKURAN DIREKTORY
             if entry.is_file():
                 # if it's a file, use stat() function
                 total += entry.stat().st_size
+                break
             elif entry.is_dir():
                 # if it's a directory, recursively call this function
                 total += ukuran_folder(entry.path)
+                break
     except NotADirectoryError:
         # if `directory` isn't a directory, get the file size then
         return os.path.getsize(directory)
