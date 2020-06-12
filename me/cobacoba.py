@@ -34,6 +34,7 @@ def dire(dir):
 	direc=''
 	while True:
 		os.chdir('..')#Mundur
+		time.sleep(2)
 		dr=os.getcwd()
 		try:
 			if str(dr)==direc:
@@ -132,7 +133,7 @@ def pindah():
 				break
 			jm=str(oo)
 			bt=str(ii)
-			sisa_waktu(600)
+			sisa_waktu(60)
 	except Exception as iip:
 		print('Something Wrong!',iip)
 		pindah()
