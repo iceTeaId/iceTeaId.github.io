@@ -26,8 +26,11 @@ def sisa_waktu(w):
 
 termux = '/data/data/com.termux/files/home/iceteaid.github.io'
 web='/storage/emulated/0/proyekbaru/program web/web'
-
 alamat='https://github.com/iceteaid/iceteaid.github.io.git'
+
+class d():
+	jm=''
+	bt=''
 
 
 def dire(dir):
@@ -95,47 +98,51 @@ def push(ee):
 			subprocess.run(['git','config','--global','credential.helper','cache'],stdout=subprocess.PIPE,universal_newlines=True)
 					
 			ff=subprocess.run(['git','config','--global','credential.helper','cache --timeout=36000'],stdout=subprocess.PIPE,universal_newlines=True)
+			pindah()
 		try :
 			if '.py' in md:
 				sts=subprocess.run(['git','switch','python'],stdout=subprocess.PIPE,universal_newlines=True)
 				dd=sts.stdout
+				pindah()
 			elif '.html' in md:
 				sus=subprocess.run(['git','switch','master'],stdout=subprocess.PIPE,universal_newlines=True)
 				pp=sus.stdout
+				pindah()
 		except:
 			print('Make New Branch!')
 				
 		if 'commit' and 'add' in modif:
-			print('Commit ',ee)
 			subprocess.run(['git','add','.'],stdout=subprocess.PIPE,universal_newlines=True)
 			subprocess.run(['git','commit','-am',"'Termux auto'"],stdout=subprocess.PIPE,universal_newlines=True)
+			print('Commit ',ee)
 			subprocess.run(['git','push'],stdout=subprocess.PIPE,universal_newlines=True)
 			print('-'*50)
 			print(waktu_sekarang())
 			print('Berhasil Push')
+			pindah()
 	except:
 		print('Gagal Push')
 		pindah()
 			 
+
 def pindah():
-	jm=''
-	bt=''
+	
 	try:
 		while True:
 			try:
 				oo=ukuran_folder(termux)
 				ii=ukuran_folder(web)
-				if jm != str(oo):
+				if str(oo) != d.jm:
 					dire(termux)
 					push(termux)
-				if bt != str(ii):
+				if d.bt != str(ii):
 					dire(web)
 					push(web) 
 			except Exception as uu:
 				print('Fail',uu)
 				break
-			jm=str(oo)
-			bt=str(ii)
+			d.jm=str(oo)
+			d.bt=str(ii)
 			sisa_waktu(60)
 	except Exception as iip:
 		print('Something Wrong!',iip)
