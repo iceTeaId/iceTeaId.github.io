@@ -62,7 +62,7 @@ while True:
 			re=st(tokoh)
 			print(re,' MATI')
 			tokoh.remove(re)
-			print(eee.upper(),' :\n',ai,ak.upper(),re,em)
+			print(eee.upper(),' :\n',ai,ak.upper(),re)
 		if eee == f:
 			oi=input('Tokoh Baru : ')
 			tokoh.append(oi)
@@ -71,7 +71,7 @@ while True:
 			lk.append(llk)
 		if ak== r:
 			oop=st(tokoh)
-			print(eee.upper(),' :\n',ai,ak,oop,', ',em)
+			print(eee.upper(),' :\n',ai,ak,oop)
 		if ak == v:
 			print(eee.upper(),'\n',ai,ak,' ke ',lks,'dengan',em)
 		else:
