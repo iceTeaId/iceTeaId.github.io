@@ -12,7 +12,8 @@ def waktu_sekarang():
 	except:
 		waktu_sekarang()
 	return ii
-		
+
+
 termux = '/data/data/com.termux/files/home/iceteaid.github.io'
 web='/storage/emulated/0/proyekbaru/program web/web'
 
